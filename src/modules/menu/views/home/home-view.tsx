@@ -27,13 +27,8 @@ export const HomeView = (methods: ReturnType<typeof useHomeModel>) => {
           />
 
           <View>
-<<<<<<< HEAD
             <Text.Title variant="white">Olá, Maria</Text.Title>
             <Text.Body variant="white">
-=======
-            <Text.Title className="text-zinc-50">Olá, Maria</Text.Title>
-            <Text.Body className="text-zinc-50">
->>>>>>> 195ceabf4f6235ed66b70bc503105a0dfd031ee3
               O que gostaria de aprender hoje?
             </Text.Body>
           </View>

@@ -1,7 +1,10 @@
-
-import { SelectOption } from "@/components/ui/select";
 import { useRouter } from "expo-router";
 import { useState } from "react";
+
+type SelectOption = {
+  label: string;
+  value: string;
+};
 
 export const useHomeModel = () => {
   const nav = useRouter();
