@@ -1,96 +1,96 @@
 # BioStart
 
-BioStart e uma aplicacao educativa voltada ao incentivo do uso do biogas como fonte de energia renovavel. O projeto foi idealizado em contexto academico no curso de Analise e Desenvolvimento de Sistemas do Instituto Federal de Roraima, com foco em sustentabilidade, acessibilidade e disseminacao de conhecimento tecnico de forma pratica.
+BioStart é uma aplicação educativa voltada ao incentivo do uso do biogás como fonte de energia renovável. O projeto foi idealizado em contexto acadêmico no curso de Análise e Desenvolvimento de Sistemas do Instituto Federal de Roraima, com foco em sustentabilidade, acessibilidade e disseminação de conhecimento técnico de forma prática.
 
-Este repositorio contem a implementacao mobile do projeto, desenvolvida com Expo e React Native, reunindo recursos de aprendizado, simulacao, acompanhamento e avaliacao sobre o uso do biogas.
+Este repositório contém a implementação mobile do projeto, desenvolvida com Expo e React Native, reunindo recursos de aprendizado, simulação, acompanhamento e avaliação sobre o uso do biogás.
 
-## Sumario
+## Sumário
 
-- [Visao geral](#visao-geral)
+- [Visão geral](#visao-geral)
 - [Contexto do projeto](#contexto-do-projeto)
 - [Objetivos](#objetivos)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
-- [Arquitetura e organizacao](#arquitetura-e-organizacao)
+- [Arquitetura e organização](#arquitetura-e-organizacao)
 - [Estrutura de pastas](#estrutura-de-pastas)
 - [Como executar](#como-executar)
-- [Scripts disponiveis](#scripts-disponiveis)
-- [Configuracao de ambiente](#configuracao-de-ambiente)
+- [Scripts disponíveis](#scripts-disponiveis)
+- [Configuração de ambiente](#configuracao-de-ambiente)
 - [Resultados esperados e impacto](#resultados-esperados-e-impacto)
-- [Autores e contexto academico](#autores-e-contexto-academico)
+- [Autores e contexto acadêmico](#autores-e-contexto-academico)
 
-## Visao geral
+## Visão geral
 
-O biogas representa uma alternativa promissora diante da crescente demanda por fontes renovaveis de energia. Mesmo com elevado potencial teorico de aproveitamento no Brasil, sua adocao ainda encontra barreiras praticas, especialmente entre pequenos produtores que enfrentam dificuldades tecnicas para implantar solucoes acessiveis e seguras.
+O biogás representa uma alternativa promissora diante da crescente demanda por fontes renováveis de energia. Mesmo com elevado potencial teórico de aproveitamento no Brasil, sua adoção ainda encontra barreiras práticas, especialmente entre pequenos produtores que enfrentam dificuldades técnicas para implantar soluções acessíveis e seguras.
 
-O BioStart foi criado para reduzir essa distancia entre conhecimento tecnico e aplicacao pratica. A proposta e oferecer, em uma experiencia digital simples e didatica, orientacoes sobre biogas, simulacoes de producao, checklist de montagem, trilhas de aprendizagem e avaliacao de conhecimento.
+O BioStart foi criado para reduzir essa distância entre conhecimento técnico e aplicação prática. A proposta é oferecer, em uma experiência digital simples e didática, orientações sobre biogás, simulações de produção, checklist de montagem, trilhas de aprendizagem e avaliação de conhecimento.
 
 ## Contexto do projeto
 
-O projeto surgiu em sala de aula, durante uma disciplina do curso de Analise e Desenvolvimento de Sistemas do Instituto Federal de Roraima, Campus Boa Vista. A atividade proposta tinha como foco o desenvolvimento de uma solucao tecnologica alinhada aos Objetivos de Desenvolvimento Sustentavel, unindo inovacao, pratica e impacto social positivo.
+O projeto surgiu em sala de aula, durante uma disciplina do curso de Análise e Desenvolvimento de Sistemas do Instituto Federal de Roraima, Campus Boa Vista. A atividade proposta tinha como foco o desenvolvimento de uma solução tecnológica alinhada aos Objetivos de Desenvolvimento Sustentável, unindo inovação, prática e impacto social positivo.
 
-Dessa iniciativa nasceu o BioStart, inicialmente concebido como um prototipo iterativo com foco em acessibilidade e usabilidade. A ideia central foi criar uma aplicacao capaz de orientar usuarios sobre o aproveitamento de residuos organicos para producao de biogas, promovendo educacao ambiental, autonomia tecnica e incentivo ao uso de energia limpa.
+Dessa iniciativa nasceu o BioStart, inicialmente concebido como um protótipo iterativo com foco em acessibilidade e usabilidade. A ideia central foi criar uma aplicação capaz de orientar usuários sobre o aproveitamento de resíduos orgânicos para produção de biogás, promovendo educação ambiental, autonomia técnica e incentivo ao uso de energia limpa.
 
 ## Objetivos
 
-- Incentivar o uso do biogas como alternativa sustentavel de energia.
-- Facilitar o acesso a informacoes tecnicas de forma simples e acessivel.
-- Apoiar pequenos produtores e estudantes no entendimento do processo de producao.
-- Promover educacao ambiental por meio de conteudo interativo.
-- Reforcar a relacao entre tecnologia, sustentabilidade e impacto social.
+- Incentivar o uso do biogás como alternativa sustentável de energia.
+- Facilitar o acesso a informações técnicas de forma simples e acessível.
+- Apoiar pequenos produtores e estudantes no entendimento do processo de produção.
+- Promover educação ambiental por meio de conteúdo interativo.
+- Reforçar a relação entre tecnologia, sustentabilidade e impacto social.
 
 ## Funcionalidades
 
-O aplicativo esta organizado em modulos principais que cobrem diferentes etapas da experiencia do usuario:
+O aplicativo está organizado em módulos principais que cobrem diferentes etapas da experiência do usuário:
 
-### 1. Autenticacao
+### 1. Autenticação
 
 - Tela de login.
 - Tela de cadastro.
-- Integracao com API para autenticacao de usuarios.
+- Integração com API para autenticação de usuários.
 
 ### 2. Menu principal
 
-- Central de navegacao para os recursos do aplicativo.
-- Acesso rapido aos modulos educacionais e ferramentas praticas.
+- Central de navegação para os recursos do aplicativo.
+- Acesso rápido aos módulos educacionais e ferramentas práticas.
 
-### 3. Simulador de producao
+### 3. Simulador de produção
 
-- Simulacao de producao de biogas a partir da quantidade de resíduo organico informada.
-- Seleção de tipo de material ou resíduo utilizado no calculo.
-- Apoio ao entendimento do potencial energetico do aproveitamento organico.
+- Simulação de produção de biogás a partir da quantidade de resíduo orgânico informada.
+- Seleção de tipo de material ou resíduo utilizado no cálculo.
+- Apoio ao entendimento do potencial energético do aproveitamento orgânico.
 
-### 4. Checklist de montagem e operacao
+### 4. Checklist de montagem e operação
 
-- Organizacao do processo em etapas.
+- Organização do processo em etapas.
 - Acompanhamento de progresso.
-- Apoio ao planejamento, construcao, operacao e manutencao.
+- Apoio ao planejamento, construção, operação e manutenção.
 
-### 5. Modulo de aprendizagem
+### 5. Módulo de aprendizagem
 
-- Conteudos educativos sobre biogas.
-- Trilhas com topicos como vantagens, desvantagens e curiosidades.
+- Conteúdos educativos sobre biogás.
+- Trilhas com tópicos como vantagens, desvantagens e curiosidades.
 - Registro de progresso do aprendizado.
 
 ### 6. Quiz educativo
 
-- Perguntas de multipla escolha sobre biodigestores e biogas.
-- Calculo de desempenho.
-- Recurso voltado a revisao e fixacao do conteudo.
+- Perguntas de múltipla escolha sobre biodigestores e biogás.
+- Cálculo de desempenho.
+- Recurso voltado à revisão e fixação do conteúdo.
 
-### 7. Forum
+### 7. Fórum
 
-- Espaco para interacao e organizacao de perguntas.
-- Estrutura pensada para estimular troca de conhecimento entre usuarios.
+- Espaço para interação e organização de perguntas.
+- Estrutura pensada para estimular a troca de conhecimento entre usuários.
 
 ### 8. Perfil
 
-- Visualizacao de progresso nas funcionalidades do app.
-- Consolidacao de indicadores de aprendizado e acompanhamento.
+- Visualização de progresso nas funcionalidades do app.
+- Consolidação de indicadores de aprendizado e acompanhamento.
 
 ## Tecnologias utilizadas
 
-Este repositorio foi construido com foco em desenvolvimento mobile moderno e organizacao modular.
+Este repositório foi construído com foco em desenvolvimento mobile moderno e organização modular.
 
 - Expo
 - React Native
@@ -104,20 +104,20 @@ Este repositorio foi construido com foco em desenvolvimento mobile moderno e org
 - React Hook Form
 - Zod
 
-## Arquitetura e organizacao
+## Arquitetura e organização
 
-O projeto adota uma organizacao modular por dominio e uma separacao inspirada em MVVM, o que facilita manutencao, escalabilidade e reaproveitamento de componentes.
+O projeto adota uma organização modular por domínio e uma separação inspirada em MVVM, o que facilita manutenção, escalabilidade e reaproveitamento de componentes.
 
-### Principais decisoes de estrutura
+### Principais decisões de estrutura
 
-- `src/app`: rotas da aplicacao com base em arquivos.
-- `src/modules`: modulos funcionais da aplicacao, como autenticacao, quiz, simulador e aprendizado.
-- `src/components`: componentes reutilizaveis de interface.
-- `src/store`: gerenciamento de estado global e persistencia local.
-- `src/config`: configuracoes compartilhadas, como cliente HTTP.
-- `src/utils`: utilitarios e funcoes auxiliares.
+- `src/app`: rotas da aplicação com base em arquivos.
+- `src/modules`: módulos funcionais da aplicação, como autenticação, quiz, simulador e aprendizado.
+- `src/components`: componentes reutilizáveis de interface.
+- `src/store`: gerenciamento de estado global e persistência local.
+- `src/config`: configurações compartilhadas, como cliente HTTP.
+- `src/utils`: utilitários e funções auxiliares.
 
-Essa abordagem ajuda a manter cada funcionalidade isolada, com responsabilidades bem definidas entre view, viewmodel, model, servicos e validacoes.
+Essa abordagem ajuda a manter cada funcionalidade isolada, com responsabilidades bem definidas entre view, viewmodel, model, serviços e validações.
 
 ## Estrutura de pastas
 
@@ -151,29 +151,29 @@ Essa abordagem ajuda a manter cada funcionalidade isolada, com responsabilidades
 
 - Node.js instalado
 - npm instalado
-- Expo CLI disponivel via `npx`
+- Expo CLI disponível via `npx`
 - Emulador Android, simulador iOS ou aplicativo Expo Go
 
-### Instalacao
+### Instalação
 
 ```bash
 npm install
 ```
 
-### Execucao em ambiente de desenvolvimento
+### Execução em ambiente de desenvolvimento
 
 ```bash
 npx expo start
 ```
 
-Depois de iniciar o projeto, o Expo exibira opcoes para abrir a aplicacao em:
+Depois de iniciar o projeto, o Expo exibirá opções para abrir a aplicação em:
 
 - Android
 - iOS
 - Web
 - Expo Go
 
-## Scripts disponiveis
+## Scripts disponíveis
 
 ```bash
 npm run start
@@ -183,32 +183,32 @@ npm run web
 npm run lint
 ```
 
-## Configuracao de ambiente
+## Configuração de ambiente
 
-O projeto utiliza uma variavel de ambiente publica para definir a URL base da API:
+O projeto utiliza uma variável de ambiente pública para definir a URL base da API:
 
 ```env
 EXPO_PUBLIC_BASE_URL=http://localhost:3000
 ```
 
-Essa configuracao e usada pelo cliente HTTP da aplicacao para chamadas como autenticacao.
+Essa configuração é usada pelo cliente HTTP da aplicação para chamadas como autenticação.
 
 ## Resultados esperados e impacto
 
-O BioStart foi concebido para ampliar o acesso a informacoes sobre energias renovaveis e estimular praticas ambientalmente responsaveis. A proposta combina tecnologia e educacao para tornar o tema do biogas mais compreensivel, aplicavel e proximo da realidade de estudantes, produtores e demais interessados.
+O BioStart foi concebido para ampliar o acesso a informações sobre energias renováveis e estimular práticas ambientalmente responsáveis. A proposta combina tecnologia e educação para tornar o tema do biogás mais compreensível, aplicável e próximo da realidade de estudantes, produtores e demais interessados.
 
-De acordo com a base conceitual do projeto, a solucao foi avaliada por cerca de 80 participantes e obteve alto indice de aprovacao em criterios como facilidade de uso, clareza e utilidade. Esses resultados reforcam o potencial da plataforma como instrumento de sensibilizacao, aprendizagem e incentivo ao aproveitamento sustentavel de residuos organicos.
+De acordo com a base conceitual do projeto, a solução foi avaliada por cerca de 80 participantes e obteve alto índice de aprovação em critérios como facilidade de uso, clareza e utilidade. Esses resultados reforçam o potencial da plataforma como instrumento de sensibilização, aprendizagem e incentivo ao aproveitamento sustentável de resíduos orgânicos.
 
-## Autores e contexto academico
+## Autores e contexto acadêmico
 
-O BioStart nasceu como iniciativa academica vinculada ao Instituto Federal de Roraima, Campus Boa Vista, em uma proposta voltada a sustentabilidade e aos ODS. O projeto demonstra como a tecnologia pode ser aplicada para gerar impacto positivo, promovendo educacao, conscientizacao ambiental e incentivo a solucoes energeticas limpas.
+O BioStart nasceu como iniciativa acadêmica vinculada ao Instituto Federal de Roraima, Campus Boa Vista, em uma proposta voltada à sustentabilidade e aos ODS. O projeto demonstra como a tecnologia pode ser aplicada para gerar impacto positivo, promovendo educação, conscientização ambiental e incentivo a soluções energéticas limpas.
 
 Autores do projeto:
 
 - Juliana Caldas
-- Leticia Alves
-- Maria Vitoria Sousa
+- Letícia Alves
+- Maria Vitória Sousa
 
-## Observacao
+## Observação
 
-O texto-base do projeto menciona etapas de prototipacao envolvendo Figma, Expo Snack, GitHub Pages, Firebase e Render. Este repositorio, no entanto, corresponde especificamente a implementacao atual do aplicativo mobile em Expo/React Native, organizada em modulos e preparada para execucao local.
+O texto-base do projeto menciona etapas de prototipação envolvendo Figma, Expo Snack, GitHub Pages, Firebase e Render. Este repositório, no entanto, corresponde especificamente à implementação atual do aplicativo mobile em Expo/React Native, organizada em módulos e preparada para execução local.
