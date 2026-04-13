@@ -6,8 +6,12 @@ import {
   ControllerRenderProps,
   FieldValues,
 } from "react-hook-form";
+<<<<<<< HEAD
 import { TextInput, TextInputProps, View } from "react-native";
 import { Text } from "./text";
+=======
+import { Text, TextInput, TextInputProps, View } from "react-native";
+>>>>>>> 195ceabf4f6235ed66b70bc503105a0dfd031ee3
 
 type Props = TextInputProps & {
   control?: any;
@@ -40,7 +44,11 @@ export const TextField = ({
     if (!field && !fieldState) {
       return (
         <View className="gap-2">
+<<<<<<< HEAD
           {isNotEmpty(label) && <Text.Body>{label}</Text.Body>}
+=======
+          {isNotEmpty(label) && <Text>{label}</Text>}
+>>>>>>> 195ceabf4f6235ed66b70bc503105a0dfd031ee3
 
           <View className="flex-row items-center">
             {isNotNull(startIcon) && (
@@ -50,7 +58,11 @@ export const TextField = ({
             )}
 
             <TextInput
+<<<<<<< HEAD
               className={`${className} ${!!startIcon ? "pl-11" : "pl-3"} ${!!endIcon ? "pr-11" : "pr-3"} h-12 flex-1 rounded-md border border-zinc-300 placeholder:text-zinc-500 focus:border-2 focus:border-green-500`}
+=======
+              className={`${className} ${!!startIcon ? "pl-11" : "pl-3"} ${!!endIcon ? "pr-11" : "pr-3"} h-12 flex-1 rounded-md border border-zinc-300 focus:border-2 focus:border-green-500`}
+>>>>>>> 195ceabf4f6235ed66b70bc503105a0dfd031ee3
               {...props}
             />
 
@@ -62,9 +74,15 @@ export const TextField = ({
           </View>
 
           {isNotEmpty(helperText) && (
+<<<<<<< HEAD
             <Text.Caption className="text-sm font-medium text-red-500">
               {helperText}
             </Text.Caption>
+=======
+            <Text className="text-sm font-medium text-red-500">
+              {helperText}
+            </Text>
+>>>>>>> 195ceabf4f6235ed66b70bc503105a0dfd031ee3
           )}
         </View>
       );
@@ -73,6 +91,7 @@ export const TextField = ({
     return (
       <View className="gap-2">
         {isNotEmpty(label) && (
+<<<<<<< HEAD
           <Text.Body>
             {label}{" "}
             {required && (
@@ -81,6 +100,12 @@ export const TextField = ({
               </Text.Caption>
             )}
           </Text.Body>
+=======
+          <Text>
+            {label}{" "}
+            {required && <Text className="font-semibold text-red-500">*</Text>}
+          </Text>
+>>>>>>> 195ceabf4f6235ed66b70bc503105a0dfd031ee3
         )}
 
         <View className="flex-row items-center">
@@ -113,9 +138,15 @@ export const TextField = ({
         </View>
 
         {isNotEmpty(error?.message) && (
+<<<<<<< HEAD
           <Text.Caption className="text-sm font-medium text-red-500">
             {error?.message}
           </Text.Caption>
+=======
+          <Text className="text-sm font-medium text-red-500">
+            {error?.message}
+          </Text>
+>>>>>>> 195ceabf4f6235ed66b70bc503105a0dfd031ee3
         )}
       </View>
     );

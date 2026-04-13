@@ -61,7 +61,11 @@ const styles: Record<string, string> = {
 const colors: Record<string, string> = {
   dark: "text-zinc-900",
   gray: "text-zinc-500",
+<<<<<<< HEAD
   white: "text-zinc-50",
+=======
+  white: "text-white",
+>>>>>>> 195ceabf4f6235ed66b70bc503105a0dfd031ee3
   green: "text-green-500",
   red: "text-red-500",
 };
