@@ -38,8 +38,7 @@ export const HomeView = (methods: ReturnType<typeof useHomeModel>) => {
               <MaterialIcons name="person" size={40} color="#22c55e" />
             </View>
             <Text.Body className="text-xl font-bold text-gray-900">
-              Perfil de Maria
-              {/* {name} */}
+              Perfil de visitante
             </Text.Body>
           </View>
 

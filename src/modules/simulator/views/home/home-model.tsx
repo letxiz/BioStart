@@ -10,6 +10,7 @@ export const useHomeModel = () => {
   const nav = useRouter();
 
   const [visible, setVisible] = useState(false);
+  const [error, setError] = useState("");
 
   const [quantity, setQuantity] = useState("");
 
@@ -24,10 +25,18 @@ export const useHomeModel = () => {
   });
 
   const handleCalcule = () => {
+    const amount = Number(quantity.replace(",", "."));
+    const factor = Number(current.value);
+    if (!quantity.trim() || !Number.isFinite(amount) || amount <= 0 || !factor) {
+      setError("Informe uma quantidade maior que zero e selecione o tipo de resíduo.");
+      setVisible(false);
+      return;
+    }
+    setError("");
     const kwhm3 = 6.5;
     const taxa = 0.9;
 
-    const volume = parseFloat(quantity) * Number(current.value);
+    const volume = amount * factor;
     const economy = volume * kwhm3 * taxa;
     setResult({ volume: volume.toFixed(2), economy: economy.toFixed(2) });
     setVisible(true);
@@ -46,6 +55,7 @@ export const useHomeModel = () => {
     options,
     current,
     visible,
+    error,
     setVisible,
     setCurrent,
     setQuantity,

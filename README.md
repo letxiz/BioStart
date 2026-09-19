@@ -8,6 +8,8 @@ Este repositório contém a implementação mobile do projeto, desenvolvida com 
 
 - [Visão geral](#visao-geral)
 - [Contexto do projeto](#contexto-do-projeto)
+- [Premiações](#premiações)
+- [Publicação acadêmica](#publicação-acadêmica)
 - [Objetivos](#objetivos)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
@@ -18,6 +20,7 @@ Este repositório contém a implementação mobile do projeto, desenvolvida com 
 - [Configuração de ambiente](#configuracao-de-ambiente)
 - [Resultados esperados e impacto](#resultados-esperados-e-impacto)
 - [Autores e contexto acadêmico](#autores-e-contexto-academico)
+- [Direitos de uso](#direitos-de-uso)
 
 ## Visão geral
 
@@ -30,6 +33,15 @@ O BioStart foi criado para reduzir essa distância entre conhecimento técnico e
 O projeto surgiu em sala de aula, durante uma disciplina do curso de Análise e Desenvolvimento de Sistemas do Instituto Federal de Roraima, Campus Boa Vista. A atividade proposta tinha como foco o desenvolvimento de uma solução tecnológica alinhada aos Objetivos de Desenvolvimento Sustentável, unindo inovação, prática e impacto social positivo.
 
 Dessa iniciativa nasceu o BioStart, inicialmente concebido como um protótipo iterativo com foco em acessibilidade e usabilidade. A ideia central foi criar uma aplicação capaz de orientar usuários sobre o aproveitamento de resíduos orgânicos para produção de biogás, promovendo educação ambiental, autonomia técnica e incentivo ao uso de energia limpa.
+
+## Premiações
+
+- **2º lugar no Hackathon AmazonTech 2025**, em Boa Vista (RR). [Registro da equipe do IFRR](https://levaagntpracop30.vercel.app/).
+- **1º lugar na Mostra Tecnológica do evento IFs do Norte na COP30**, realizado em 2025 em Belém (PA), com o projeto “BioStart: Guia interativo para produção de biogás com resíduos orgânicos”. [Notícia do IFPA](https://www.ifpa.edu.br/ultimas-noticias/2776-ifs-do-norte-na-cop30-mostra-tecnologica-e-hackathon-revelam-o-potencial-inovador-dos-estudantes-nortistas).
+
+## Publicação acadêmica
+
+O projeto também foi apresentado no XIII Fórum de Integração Ensino, Pesquisa, Extensão e Inovação Tecnológica do IFRR. O trabalho [“BioStart: Guia interativo para produção de biogás com resíduos orgânicos”](https://periodicos.ifrr.edu.br/index.php/anais_forint/pt_BR/article/view/2311), de Letícia Alves dos Santos, Maria Vitória Sousa, Juliana Caldas Viana e George Oliveira Almeida, foi publicado nos anais do evento em 2026.
 
 ## Objetivos
 
@@ -47,7 +59,7 @@ O aplicativo está organizado em módulos principais que cobrem diferentes etapa
 
 - Tela de login.
 - Tela de cadastro.
-- Integração com API para autenticação de usuários.
+- Acesso local de demonstração sem senha ou servidor.
 
 ### 2. Menu principal
 
@@ -80,8 +92,8 @@ O aplicativo está organizado em módulos principais que cobrem diferentes etapa
 
 ### 7. Fórum
 
-- Espaço para interação e organização de perguntas.
-- Estrutura pensada para estimular a troca de conhecimento entre usuários.
+- Perguntas locais para demonstração da interface.
+- As perguntas adicionadas não são compartilhadas nem salvas após fechar o app.
 
 ### 8. Perfil
 
@@ -149,21 +161,21 @@ Essa abordagem ajuda a manter cada funcionalidade isolada, com responsabilidades
 
 ### Pre-requisitos
 
-- Node.js instalado
-- npm instalado
-- Expo CLI disponível via `npx`
-- Emulador Android, simulador iOS ou aplicativo Expo Go
+- Node.js LTS e npm instalados no notebook
+- Para usar no celular: aplicativo Expo Go e celular na mesma rede Wi-Fi do notebook
+- Para Android no notebook: Android Studio com emulador configurado
+- Para iOS no notebook: macOS com Xcode
 
 ### Instalação
 
 ```bash
-npm install
+npm ci
 ```
 
 ### Execução em ambiente de desenvolvimento
 
 ```bash
-npx expo start
+npm start
 ```
 
 Depois de iniciar o projeto, o Expo exibirá opções para abrir a aplicação em:
@@ -173,6 +185,14 @@ Depois de iniciar o projeto, o Expo exibirá opções para abrir a aplicação e
 - Web
 - Expo Go
 
+Para testar no navegador, execute `npm run web` e abra o endereço mostrado no terminal. Para testar no celular, execute `npm start` e leia o QR code com o Expo Go. Se a rede Wi-Fi impedir a conexão, experimente `npx expo start --tunnel`. Para usar o emulador Android, inicie o emulador antes e pressione `a` no terminal do Expo. O script `npm run android` gera e executa uma versão nativa e requer Android Studio e SDK configurados.
+
+Se o Expo ficar parado ao iniciar ou você estiver sem acesso aos serviços online do Expo, execute `npm run web:offline` e abra `http://localhost:8081` no navegador (ou a porta indicada no terminal). Esse comando ainda precisa que as dependências tenham sido instaladas com `npm ci`. Se uma porta estiver ocupada, execute `npm run web:offline -- --port 19006` e abra `http://localhost:19006`.
+
+Não abra `dist/index.html` diretamente pelo editor ou como arquivo `file://`: a pasta `dist` contém uma exportação estática e seus arquivos JavaScript precisam ser servidos por HTTP. Se o navegador continuar mostrando uma versão antiga ou o erro `import.meta may only appear in a module`, pare o Expo, execute `npm run web:offline -- --clear` e recarregue a página com `Ctrl+Shift+R`.
+
+O app abre na tela inicial. Toque em **Entrar sem senha (demonstração)** para acessar o menu sem conta ou API. A opção **Entrar** também funciona em modo de demonstração com um e-mail válido e uma senha não vazia; não há autenticação real. A tela de cadastro explica que não há servidor e oferece acesso de demonstração, sem coletar dados pessoais. As telas educativas, o quiz, o checklist e o simulador funcionam sem backend. As perguntas do fórum ficam apenas na memória enquanto o app está aberto.
+
 ## Scripts disponíveis
 
 ```bash
@@ -180,18 +200,21 @@ npm run start
 npm run android
 npm run ios
 npm run web
+npm run web:offline
 npm run lint
 ```
 
 ## Configuração de ambiente
 
-O projeto utiliza uma variável de ambiente pública para definir a URL base da API:
+O modo de demonstração funciona sem `.env` e sem backend. O cliente HTTP antigo permanece no código como base para uma possível integração futura e aceita esta variável:
 
 ```env
-EXPO_PUBLIC_BASE_URL=http://localhost:3000
+EXPO_PUBLIC_BASE_URL=http://SEU_IP_LOCAL:3000
 ```
 
-Essa configuração é usada pelo cliente HTTP da aplicação para chamadas como autenticação.
+Crie um arquivo `.env` na raiz com essa variável somente se você implementar uma API compatível. Atualmente nenhuma tela chama essa API. No celular, `localhost` aponta para o próprio telefone; use o IP local do notebook. No emulador Android, o host local costuma ser `10.0.2.2`. A API não está incluída neste repositório.
+
+O arquivo `.env` é ignorado pelo Git. Antes de publicar, confira `git status` para verificar que `dist/`, `node_modules/` e `.env` não serão enviados. Como `.env` já foi versionado antes, retire-o do índice com `git rm --cached .env` caso ainda apareça no seu clone; o arquivo local será preservado. Se houver credenciais reais em commits antigos, remova-as do serviço de origem e gere outras.
 
 ## Resultados esperados e impacto
 
@@ -201,7 +224,7 @@ De acordo com a base conceitual do projeto, a solução foi avaliada por cerca d
 
 ## Autores e contexto acadêmico
 
-O BioStart nasceu como iniciativa acadêmica vinculada ao Instituto Federal de Roraima, Campus Boa Vista, em uma proposta voltada à sustentabilidade e aos ODS. O projeto demonstra como a tecnologia pode ser aplicada para gerar impacto positivo, promovendo educação, conscientização ambiental e incentivo a soluções energéticas limpas.
+O BioStart nasceu como iniciativa acadêmica vinculada ao Instituto Federal de Roraima, Campus Boa Vista, e foi desenvolvido no contexto do trabalho de conclusão de curso (TCC). O projeto demonstra como a tecnologia pode ser aplicada para gerar impacto positivo, promovendo educação, conscientização ambiental e incentivo a soluções energéticas limpas.
 
 Autores do projeto:
 
@@ -212,3 +235,11 @@ Autores do projeto:
 ## Observação
 
 O texto-base do projeto menciona etapas de prototipação envolvendo Figma, Expo Snack, GitHub Pages, Firebase e Render. Este repositório, no entanto, corresponde especificamente à implementação atual do aplicativo mobile em Expo/React Native, organizada em módulos e preparada para execução local.
+
+## Direitos de uso
+
+**Todos os direitos reservados às autoras do BioStart.** O código e os materiais originais deste repositório não têm licença de uso público. Qualquer reprodução, modificação, redistribuição ou uso comercial desses materiais exige autorização prévia das autoras. Para solicitar permissão, entre em contato com a equipe BioStart.
+
+As bibliotecas e os materiais de terceiros usados pelo aplicativo seguem suas próprias licenças. A publicação deste repositório no GitHub não transfere a autoria do projeto nem concede licença para reutilizá-lo fora das funcionalidades permitidas pela plataforma.
+
+O artigo acadêmico está publicado nos anais do IFRR e segue as condições de uso informadas pela própria publicação.

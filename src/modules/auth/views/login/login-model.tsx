@@ -2,19 +2,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 import { useRouter } from "expo-router";
-import { LoginParams } from "../../interfaces";
 import { loginSchema, LoginValidator } from "../../validations";
-
-type Props = {
-  login: (params: LoginParams) => Promise<any>;
-};
 
 const defaultValues: LoginValidator = {
   email: "",
   password: "",
 };
 
-export const useLoginModel = ({ login }: Props) => {
+export const useLoginModel = () => {
   const nav = useRouter();
 
   const { control, handleSubmit } = useForm<LoginValidator>({
@@ -23,12 +18,8 @@ export const useLoginModel = ({ login }: Props) => {
     resolver: zodResolver(loginSchema),
   });
 
-  // const onSubmit = handleSubmit((data) => login(data));
-
-  const onSubmit = handleSubmit((data) => {
-    nav.replace("/menu");
-    console.log(data);
-  });
+  const enterDemo = () => nav.replace("/menu");
+  const onSubmit = handleSubmit(enterDemo);
 
   const handleSignUp = () => nav.push("/register");
 
@@ -36,6 +27,7 @@ export const useLoginModel = ({ login }: Props) => {
     nav,
     control,
     onSubmit,
+    enterDemo,
     handleSignUp,
   };
 };

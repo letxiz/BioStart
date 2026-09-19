@@ -15,6 +15,8 @@ export const useHomeModel = () => {
 
   const handleProfile = () => nav.push("/profile");
 
+  const handleExit = () => nav.replace("/");
+
   return {
     handleLearn,
     handleSimulator,
@@ -22,5 +24,6 @@ export const useHomeModel = () => {
     handleQuiz,
     handleForum,
     handleProfile,
+    handleExit,
   };
 };

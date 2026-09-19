@@ -7,7 +7,7 @@ export const Title = () => {
         Iniciar Sessão
       </Text>
       <Text className="mt-1 text-center text-base leading-snug text-zinc-500">
-        Entre na sua conta para continuar
+        Acesse os recursos em modo de demonstração
       </Text>
     </View>
   );

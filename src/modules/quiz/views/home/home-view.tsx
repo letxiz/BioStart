@@ -2,7 +2,7 @@ import { Button, Text } from "@/components";
 import { ActionButton, AppBar } from "@/components/AppBar";
 import { questions, useQuizStore } from "@/store";
 import { MaterialIcons } from "@expo/vector-icons";
-import { Alert, ScrollView, StatusBar, View } from "react-native";
+import { ScrollView, StatusBar, View } from "react-native";
 import { QuizQuestion } from "./components";
 import { useHomeModel } from "./home-model";
 
@@ -11,8 +11,9 @@ export const HomeView = (methods: ReturnType<typeof useHomeModel>) => {
   const answers = useQuizStore((state) => state.answers);
   const setAnswer = useQuizStore((state) => state.setAnswer);
   const resetQuiz = useQuizStore((state) => state.resetQuiz);
-  const setPercentage = useQuizStore((s) => s.setPercentage);
-  const setCorrectAnswers = useQuizStore((s) => s.setCorrectAnswers);
+  const submitQuiz = useQuizStore((s) => s.submitQuiz);
+  const hasSubmitted = useQuizStore((s) => s.hasSubmitted);
+  const correctAnswers = useQuizStore((s) => s.correctAnswers);
 
   const handleSubmit = () => {
     let score = 0;
@@ -20,13 +21,8 @@ export const HomeView = (methods: ReturnType<typeof useHomeModel>) => {
       if (answers[index] === q.correctIndex) score++;
     });
 
-    setPercentage((score / questions.length) * 100);
-    setCorrectAnswers(score);
+    submitQuiz(score);
 
-    Alert.alert(
-      "Resultado",
-      `Você acertou ${score} de ${questions.length} perguntas!`,
-    );
   };
 
   return (
@@ -66,6 +62,12 @@ export const HomeView = (methods: ReturnType<typeof useHomeModel>) => {
 
         <View className="mb-8 gap-3">
           <Button label="Enviar respostas" onPress={handleSubmit} />
+
+          {hasSubmitted ? (
+            <Text.Body className="text-center">
+              Você acertou {correctAnswers} de {questions.length} perguntas!
+            </Text.Body>
+          ) : null}
 
           <Button
             className="bg-red-500"

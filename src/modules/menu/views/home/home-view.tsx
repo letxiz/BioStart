@@ -1,5 +1,6 @@
 import { IconButton, Text } from "@/components";
-import { Image, StatusBar, View } from "react-native";
+import { StatusBar, View } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 import { CardButton } from "./components";
 import { useHomeModel } from "./home-model";
 
@@ -11,6 +12,7 @@ export const HomeView = (methods: ReturnType<typeof useHomeModel>) => {
     handleQuiz,
     handleForum,
     handleProfile,
+    handleExit,
   } = methods;
 
   return (
@@ -19,22 +21,19 @@ export const HomeView = (methods: ReturnType<typeof useHomeModel>) => {
 
       <View className="flex-row justify-between rounded-b-3xl bg-green-500 px-6 py-8 shadow-md">
         <View className="flex-row gap-3">
-          <Image
-            source={{
-              uri: "https://ui-avatars.com/api/?name=Maria&background=22c55e&color=fff",
-            }}
-            className="h-12 w-12 rounded-full border-2 border-white"
-          />
+          <View className="h-12 w-12 items-center justify-center rounded-full border-2 border-white bg-green-600">
+            <MaterialIcons name="person" size={30} color="#fff" />
+          </View>
 
           <View>
-            <Text.Title variant="white">Olá, Maria</Text.Title>
+            <Text.Title variant="white">Olá, visitante</Text.Title>
             <Text.Body variant="white">
               O que gostaria de aprender hoje?
             </Text.Body>
           </View>
         </View>
 
-        <IconButton icon="exit-to-app" size={24} color="#fafafa" />
+        <IconButton icon="exit-to-app" size={24} color="#fafafa" onPress={handleExit} />
       </View>
 
       <View className="flex-1 bg-zinc-100 px-5 pt-8">

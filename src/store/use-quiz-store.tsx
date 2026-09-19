@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 interface Question {
   question: string;
@@ -11,9 +12,11 @@ interface QuizStore {
   answers: Record<number, number | null>;
   percentage: number;
   correctAnswers: number;
+  hasSubmitted: boolean;
   setAnswer: (questionIndex: number, optionIndex: number) => void;
   setPercentage: (value: number) => void;
   setCorrectAnswers: (value: number) => void;
+  submitQuiz: (correctAnswers: number) => void;
   resetQuiz: () => void;
 }
 
@@ -71,18 +74,28 @@ export const useQuizStore = create<QuizStore>()(
       answers: {},
       percentage: 0,
       correctAnswers: 0,
+      hasSubmitted: false,
 
       setAnswer: (questionIndex, optionIndex) =>
         set((state) => ({
           answers: { ...state.answers, [questionIndex]: optionIndex },
+          hasSubmitted: false,
         })),
 
       setCorrectAnswers: (value) => set({ correctAnswers: value }),
 
+      submitQuiz: (correctAnswers) =>
+        set({
+          correctAnswers,
+          percentage: (correctAnswers / questions.length) * 100,
+          hasSubmitted: true,
+        }),
+
       setPercentage: (value) => set({ percentage: value }),
 
-      resetQuiz: () => set({ answers: {}, percentage: 0 }),
+      resetQuiz: () =>
+        set({ answers: {}, percentage: 0, correctAnswers: 0, hasSubmitted: false }),
     }),
-    { name: "quiz-storage" },
+    { name: "quiz-storage", storage: createJSONStorage(() => AsyncStorage) },
   ),
 );

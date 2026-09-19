@@ -7,7 +7,7 @@ import { Container, Header, Title } from "./components";
 import { useLoginModel } from "./login-model";
 
 export const LoginView = (methods: ReturnType<typeof useLoginModel>) => {
-  const { control, onSubmit, handleSignUp } = methods;
+  const { control, onSubmit, enterDemo, handleSignUp } = methods;
   const [visible, setVisible] = useState(true);
 
   return (
@@ -42,13 +42,19 @@ export const LoginView = (methods: ReturnType<typeof useLoginModel>) => {
 
             <Button label="Entrar" onPress={onSubmit} />
 
+            <Button
+              label="Entrar sem senha (demonstração)"
+              variant="bordered"
+              onPress={enterDemo}
+            />
+
             <Text className="text-center">
-              Não possui uma conta?{" "}
+              Quer saber sobre o acesso?{" "}
               <Text
                 className="font-semibold text-green-500 underline"
                 onPress={handleSignUp}
               >
-                Cadastre-se
+                Saiba mais
               </Text>
             </Text>
           </View>

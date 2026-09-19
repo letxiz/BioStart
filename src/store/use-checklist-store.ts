@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 export type SectionKey =
   | "planejamento"
@@ -139,6 +140,6 @@ export const useChecklistStore = create<ChecklistStore>()(
           ) as Record<SectionKey, ChecklistItem[]>,
         })),
     }),
-    { name: "checklist-storage" },
+    { name: "checklist-storage", storage: createJSONStorage(() => AsyncStorage) },
   ),
 );

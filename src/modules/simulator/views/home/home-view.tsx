@@ -13,6 +13,7 @@ export const HomeView = (methods: ReturnType<typeof useHomeModel>) => {
     options,
     current,
     visible,
+    error,
     setVisible,
     setCurrent,
     setQuantity,
@@ -47,7 +48,7 @@ export const HomeView = (methods: ReturnType<typeof useHomeModel>) => {
           </Text.Title>
 
           <Text.Body className="text-center text-zinc-50">
-            Calcule o potêncial de produção de biogás dos seus resíduos.
+            Calcule o potencial de produção de biogás dos seus resíduos.
           </Text.Body>
         </View>
 
@@ -63,11 +64,13 @@ export const HomeView = (methods: ReturnType<typeof useHomeModel>) => {
           </SelectContainer>
 
           <TextField
-            label="Quantidade (kg/dia ou m³/dia)"
+            label="Quantidade (kg/dia)"
             placeholder="Informe a quantidade"
             onChangeText={(value) => setQuantity(value)}
             required
           />
+
+          {error ? <Text.Body className="text-red-500">{error}</Text.Body> : null}
 
           <Button label="Calcular" onPress={handleCalcule} />
         </View>
@@ -78,7 +81,7 @@ export const HomeView = (methods: ReturnType<typeof useHomeModel>) => {
       <ResultDialog
         visible={visible}
         result={result}
-        onClose={() => setVisible(!visible)}
+        onClose={() => setVisible(false)}
       />
     </View>
   );
